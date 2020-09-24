@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import {NavLink} from 'react-router-dom'
 import classes from './Drawer.css'
-import Backdrop from "../../UI/Backdrop/Backdrop";
+import {NavLink} from 'react-router-dom'
+import Backdrop from '../../UI/Backdrop/Backdrop'
 
 const links = [
   {to: '/', label: 'Список', exact: true},
@@ -23,7 +23,8 @@ class Drawer extends Component {
             to={link.to}
             exact={link.exact}
             activeClassName={classes.active}
-            onClick={this.clickHandler} >
+            onClick={this.clickHandler}
+          >
             {link.label}
           </NavLink>
         </li>
@@ -42,14 +43,13 @@ class Drawer extends Component {
       <React.Fragment>
         <nav className={cls.join(' ')}>
           <ul>
-            {this.renderLinks()}
+            { this.renderLinks() }
           </ul>
         </nav>
-        {this.props.isOpen ? <Backdrop onClick={this.props.onClose} /> : null}
+        { this.props.isOpen ? <Backdrop onClick={this.props.onClose} /> : null }
       </React.Fragment>
-
-    );
+    )
   }
 }
 
-export default Drawer;
+export default Drawer

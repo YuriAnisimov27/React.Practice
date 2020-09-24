@@ -1,8 +1,7 @@
 import React from 'react'
-import classes from'./AnswerItem.css'
+import classes from './AnswerItem.css'
 
 const AnswerItem = props => {
-
   const cls = [classes.AnswerItem]
 
   if (props.state) {
@@ -10,11 +9,13 @@ const AnswerItem = props => {
   }
 
   return (
-    <li className={cls.join(' ')}
-        onClick={() => props.onAnswerClick(props.answer.id)}>
-      {props.answer.text}
+    <li
+      className={cls.join(' ')}
+      onClick={() => props.onAnswerClick(props.answer.id)}
+    >
+      { props.answer.text }
     </li>
   )
 }
 
-export default AnswerItem;
+export default AnswerItem

@@ -8,7 +8,6 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 12px;
-    cursor: pointer;
 }
 
 .Button:focus {
@@ -25,12 +24,12 @@
     cursor: not-allowed;
 }
 
-.success {
-    background: rgba(161, 240, 69, 1);
-}
-
 .error {
     background: rgba(240, 87, 108, 1);
+}
+
+.success {
+    background: rgba(161, 240, 69, 1);
 }
 
 .primary {
