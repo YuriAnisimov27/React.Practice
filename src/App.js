@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
-import Layout from './hoc/Layout/Layout'
-import {Route, Switch, Redirect, withRouter} from 'react-router-dom'
-import Quiz from './containers/Quiz/Quiz'
-import QuizList from './containers/QuizList/QuizList'
-import Auth from './containers/Auth/Auth'
-import QuizCreator from './containers/QuizCreator/QuizCreator'
+import React, {Component} from 'react';
+import Layout from './hoc/Layout/Layout';
+import {Route, Switch, Redirect, withRouter} from 'react-router-dom';
+import Quiz from './containers/Quiz/Quiz';
+import QuizList from './containers/QuizList/QuizList';
+import Auth from './containers/Auth/Auth';
+import QuizCreator from './containers/QuizCreator/QuizCreator';
 import {connect} from "react-redux";
 import Logout from "./components/Logout/Logout";
-import {autoLogout} from "./store/actions/auth";
+import {autoLogin} from "./store/actions/auth";
 
 class App extends Component {
 
@@ -21,7 +21,7 @@ class App extends Component {
       <Switch>
         <Route path="/auth" component={Auth} />
         <Route path="/quiz/:id" component={Quiz} />
-        <Route path="/" component={QuizList} />
+        <Route path="/" exact component={QuizList} />
         <Redirect to="/" />
       </Switch>
     )
@@ -31,8 +31,8 @@ class App extends Component {
         <Switch>
           <Route path="/quiz-creator" component={QuizCreator} />
           <Route path="/quiz/:id" component={Quiz} />
-          <Route path="/" component={QuizList} />
           <Route path="/logout" component={Logout} />
+          <Route path="/" exact component={QuizList} />
           <Redirect to="/" />
         </Switch>
       )
@@ -54,7 +54,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    authLogin: () => dispatch(autoLogout())
+    autoLogin: () => dispatch(autoLogin())
   }
 }
 
