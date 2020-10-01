@@ -3,7 +3,6 @@ import classes from './Auth.css'
 import Button from '../../components/UI/Button/Button'
 import Input from '../../components/UI/Input/Input'
 import is from 'is_js'
-import axios from 'axios'
 import {connect} from 'react-redux'
 import {auth} from "../../store/actions/auth";
 
